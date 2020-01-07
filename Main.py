@@ -33,9 +33,16 @@ def GUI():
 	tbWidth.pack()
 	tbWidth.insert(tk.END, "1920")
 
+	#get file data
 	strPath = tbPath.get('1.0', 'end-1c')
 	strSave = tbSave.get('1.0', 'end-1c')
-	arryOutSize = (tbHeight.get('1.0', 'end-1c'), tbWidth.get('1.0', 'end-1c'))
+	arryOutSize = (int(tbHeight.get('1.0', 'end-1c')), int(tbWidth.get('1.0', 'end-1c')))
+
+	print((arryOutSize[0]))
+
+	#save button
+	bttnSave = tk.Button(root, text="Save", command = ResizeImage(strPath, strSave, arryOutSize), )
+	bttnSave.pack()
 
 	tk.mainloop()
 

@@ -40,10 +40,6 @@ def GUI():
 
 	print((arryOutSize[0]))
 
-	#save button
-	bttnSave = tk.Button(root, text="Save", command = ResizeImage(strPath, strSave, arryOutSize), )
-	bttnSave.pack()
-
 	tk.mainloop()
 
 	return strPath, strSave, arryOutSize
@@ -70,6 +66,11 @@ def ResizeImage(strPath, strSave, arryOutSize):
 def main(args):
 	strPath, strSave, arryOutSize = GUI()
 	print(strPath, strSave, arryOutSize)
+
+	root = tk.Tk()
+	#save button
+	bttnSave = tk.Button(root, text="Save", command = ResizeImage(strPath, strSave, arryOutSize))
+	bttnSave.pack()
 
 	strPath = "C:\\Users\\P10499583\\Downloads\\parking1.png"
 	strSave = "C:\\Users\\P10499583\\Downloads\\parkingSmaller2.png"
